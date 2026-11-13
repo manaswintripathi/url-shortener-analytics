@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- Built by Manaswin Tripathi (@manaswintripathi) -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener + Analytics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>🔗 URL Shortener <span>+ Analytics</span></h1>
+    <p class="tagline">Shorten links, track every click — all in one dashboard.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Shorten a link</h2>
+      <form id="shorten-form">
+        <input id="url-input" type="url" placeholder="Paste a long URL, e.g. https://example.com/very/long/page" required>
+        <input id="alias-input" type="text" placeholder="Custom alias (optional, 3–20 chars)">
+        <button type="submit">Shorten</button>
+      </form>
+      <p id="form-error" class="error" hidden></p>
+      <div id="result" class="result" hidden>
+        <span>Your short link:</span>
+        <a id="result-link" href="#" target="_blank" rel="noopener"></a>
+        <button id="result-copy" type="button">Copy</button>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card"><div class="stat-num" id="total-links">0</div><div class="stat-label">Total links</div></div>
+      <div class="stat-card"><div class="stat-num" id="total-clicks">0</div><div class="stat-label">Total clicks</div></div>
+      <div class="stat-card"><div class="stat-num" id="top-link">—</div><div class="stat-label">Top link</div></div>
+    </section>
+
+    <section class="card">
+      <h2>Clicks — last 14 days</h2>
+      <canvas id="chart" width="800" height="240"></canvas>
+      <p class="hint">Bar chart drawn with plain canvas — no external libraries.</p>
+    </section>
+
+    <section class="card">
+      <div class="table-head">
+        <h2>Your links</h2>
+        <div class="table-actions">
+          <input id="search-input" type="search" placeholder="Search links…">
+          <button id="clear-all" type="button" class="danger">Clear all</button>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Short link</th><th>Original URL</th><th>Clicks</th><th>Created</th><th></th></tr>
+        </thead>
+        <tbody id="links-body"></tbody>
+      </table>
+      <p id="empty-state" class="hint" hidden>No links yet — shorten your first URL above.</p>
+    </section>
+
+    <section class="card">
+      <h2>Top links</h2>
+      <ol id="top-links"></ol>
+    </section>
+  </main>
+
+  <footer class="footer">Built by Manaswin Tripathi (@manaswintripathi)</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
