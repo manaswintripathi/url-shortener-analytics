@@ -1,0 +1,20 @@
+{
+  "author": "Manaswin Tripathi (@manaswintripathi)",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "description": "A fast URL shortener with a built-in analytics dashboard — shorten links, track clicks per link and per day, and manage them from one page.",
+  "keywords": [
+    "url-shortener",
+    "analytics",
+    "express",
+    "dashboard"
+  ],
+  "license": "MIT",
+  "main": "server.js",
+  "name": "url-shortener-analytics",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "1.0.0"
+}
